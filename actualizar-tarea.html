@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Actualizar Tarea</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Encabezado -->
+  <header class="site-header">
+    <h1>Condominio Island Winds</h1>
+    <nav>
+      <ul class="menu">
+        <li><a href="dashboard.html">Inicio</a></li>
+        <li><a href="panel-tareas.html">Panel de Tareas</a></li>
+        <li><a href="../index.html">Cerrar Sesión</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Contenido Principal -->
+  <main class="container">
+    <h2>Actualizar Estado de la Tarea</h2>
+
+    <form id="formularioActualizarTarea" class="formulario">
+
+      <!-- Campo oculto o deshabilitado con el título de la tarea -->
+      <label>Título:
+        <input type="text" value="Limpieza de piscina" disabled />
+      </label>
+
+      <!-- Fecha límite -->
+      <label>Fecha límite:
+        <input type="text" value="05/05/2025" disabled />
+      </label>
+
+      <!-- Ubicación -->
+      <label>Ubicación:
+        <input type="text" value="Área recreativa" disabled />
+      </label>
+
+      <!-- Estado actual -->
+      <label>Estado actual:
+        <select name="estado" required>
+          <option value="pendiente">Pendiente</option>
+          <option value="en_progreso">En Progreso</option>
+          <option value="completada">Completada</option>
+        </select>
+      </label>
+
+      <!-- Notas adicionales -->
+      <label>Notas:
+        <textarea name="notas" rows="4" placeholder="Agrega observaciones..."></textarea>
+      </label>
+
+      <!-- Imagen adjunta -->
+      <label>Foto adjunta (opcional):
+        <input type="file" accept="image/*" />
+      </label>
+
+      <!-- Botón de guardar -->
+      <button type="submit">Guardar Cambios</button>
+
+    </form>
+  </main>
+
+  <!-- Script opcional para funcionalidad básica -->
+  <script>
+    document.getElementById("formularioActualizarTarea").addEventListener("submit", function(e) {
+      e.preventDefault();
+      
+      // Simular guardado exitoso
+      alert("Estado de la tarea actualizado correctamente.");
+      
+      // Redirigir al panel de tareas
+      window.location.href = "panel-tareas.html";
+    });
+  </script>
+
+</body>
+</html>

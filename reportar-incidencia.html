@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reportar Incidencia</title>
+  <link rel="stylesheet" href="css/style.css" /> <!-- Asegúrate de que esta ruta sea correcta -->
+</head>
+<body>
+
+  <!-- Encabezado -->
+  <header class="site-header">
+    <h1>Condominio Island Winds</h1>
+    <nav>
+      <ul class="menu">
+        <li><a href="dashboard.html">Inicio</a></li>
+        <li><a href="#">Reportar Incidencia</a></li>
+        <li><a href="../index.html">Cerrar Sesión</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Contenido Principal -->
+  <main class="container">
+    <h2>Reportar una Incidencia</h2>
+    <p>Describe el problema que deseas reportar al personal del condominio.</p>
+
+    <form id="formularioIncidencia" class="formulario">
+      <label>Título:
+        <input type="text" placeholder="Ej: Fuga en techo" required />
+      </label>
+
+      <label>Descripción detallada:
+        <textarea rows="5" placeholder="Explica el problema..."></textarea>
+      </label>
+
+      <label>Ubicación exacta:
+        <input type="text" placeholder="Ej: Ascensor A, piso 3" />
+      </label>
+
+      <label>Foto adjunta (opcional):
+        <input type="file" accept="image/*" />
+      </label>
+
+      <button type="submit">Enviar Reporte</button>
+    </form>
+  </main>
+
+  <!-- Script opcional -->
+  <script>
+    document.getElementById("formularioIncidencia").addEventListener("submit", function(e) {
+      e.preventDefault();
+      alert("Incidencia reportada correctamente.");
+      window.location.href = "dashboard.html";
+    });
+  </script>
+
+</body>
+</html>

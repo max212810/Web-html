@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Panel de Tareas</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Encabezado -->
+  <header class="site-header">
+    <h1>Condominio Island Winds</h1>
+    <nav>
+      <ul class="menu">
+        <li><a href="dashboard.html">Inicio</a></li>
+        <li><a href="#">Tareas</a></li>
+        <li><a href="../../index.html">Cerrar Sesión</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Contenido Principal -->
+  <main class="container">
+    <h2>Panel de Tareas Asignadas</h2>
+    <p>Aquí puedes ver las tareas que te han sido asignadas y actualizar su estado.</p>
+
+    <!-- Lista de Tareas -->
+    <div class="tarjetas">
+      
+      <!-- Tarea 1 -->
+      <div class="card tarea">
+        <h3>Limpieza de piscina</h3>
+        <p><strong>Ubicación:</strong> Área recreativa</p>
+        <p><strong>Fecha límite:</strong> 05/05/2025</p>
+        <p><strong>Estado:</strong> <span class="estado estado-pendiente">Pendiente</span></p>
+        <a href="actualizar-tarea.html"><button>Actualizar Estado</button></a>
+      </div>
+
+      <!-- Tarea 2 -->
+      <div class="card tarea">
+        <h3>Revisión eléctrica</h3>
+        <p><strong>Ubicación:</strong> Salón comunal</p>
+        <p><strong>Fecha límite:</strong> 10/05/2025</p>
+        <p><strong>Estado:</strong> <span class="estado estado-en-progreso">En Progreso</span></p>
+        <a href="actualizar-tarea.html"><button>Actualizar Estado</button></a>
+      </div>
+
+      <!-- Tarea 3 -->
+      <div class="card tarea">
+        <h3>Poda de jardines</h3>
+        <p><strong>Ubicación:</strong> Entrada principal</p>
+        <p><strong>Fecha límite:</strong> 14/05/2025</p>
+        <p><strong>Estado:</strong> <span class="estado estado-completado">Completada</span></p>
+        <a href="actualizar-tarea.html"><button>Ver Detalles</button></a>
+      </div>
+
+    </div>
+  </main>
+
+</body>
+</html>

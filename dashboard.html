@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard - Condominio Island Winds</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Encabezado -->
+  <header class="site-header">
+    <h1>Condominio Island Winds</h1>
+    <nav>
+      <ul class="menu">
+        <li><a href="#">Inicio</a></li>
+        <li><a href="perfil.html">Mi Perfil</a></li>
+        <li><a href="index.html" onclick="cerrarSesion()">Cerrar Sesión</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Contenido Principal -->
+  <main class="container">
+    <h2 id="saludo">Bienvenido</h2>
+    <section class="resumen">
+      <div class="card"><strong>Saldo Pendiente:</strong> $150.00</div>
+      <div class="card"><strong>Reservas Activas:</strong> 1</div>
+      <div class="card"><strong>Incidencias Abiertas:</strong> 0</div>
+    </section>
+
+    <h3>Acciones Rápidas</h3>
+    <div class="acciones" id="acciones-rapidas">
+      <!-- Aquí se insertarán las acciones dinámicas -->
+    </div>
+  </main>
+
+  <script>
+    function cerrarSesion() {
+      sessionStorage.clear();
+    }
+  </script>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

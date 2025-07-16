@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Reservar Área Común</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Encabezado -->
+  <header class="site-header">
+    <h1>Condominio Island Winds</h1>
+    <nav>
+      <ul class="menu">
+        <li><a href="dashboard.html">Inicio</a></li>
+        <li><a href="#">Reservar Área</a></li>
+        <li><a href="../index.html">Cerrar Sesión</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Contenido Principal -->
+  <main class="container">
+    <h2>Reservar Área Común</h2>
+    <p>Selecciona el área y fecha para hacer una reserva.</p>
+
+    <form id="formularioReserva" class="formulario">
+      <label>Área a reservar:
+        <select required>
+          <option value="">-- Selecciona --</option>
+          <option value="salon">Salón Comunal</option>
+          <option value="piscina">Piscina</option>
+          <option value="gym">Gimnasio</option>
+        </select>
+      </label>
+
+      <label>Fecha de reserva:
+        <input type="date" required />
+      </label>
+
+      <label>Número de personas:
+        <input type="number" min="1" max="50" value="1" />
+      </label>
+
+      <label>Comentarios (opcional):
+        <textarea rows="4" placeholder="Detalles adicionales..."></textarea>
+      </label>
+
+      <button type="submit">Solicitar Reserva</button>
+    </form>
+  </main>
+
+  <!-- Script opcional -->
+  <script>
+    document.getElementById("formularioReserva").addEventListener("submit", function(e) {
+      e.preventDefault();
+      alert("Reserva solicitada correctamente.");
+      window.location.href = "dashboard.html";
+    });
+  </script>
+
+</body>
+</html>

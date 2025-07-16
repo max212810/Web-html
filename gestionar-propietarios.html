@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gestionar Propietarios</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Encabezado -->
+  <header class="site-header">
+    <h1>Condominio Island Winds</h1>
+    <nav>
+      <ul class="menu">
+        <li><a href="dashboard.html">Inicio</a></li>
+        <li><a href="#">Propietarios</a></li>
+        <li><a href="../index.html">Cerrar Sesión</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Contenido Principal -->
+  <main class="container">
+    <h2>Gestionar Propietarios</h2>
+    <p>Aquí puedes ver, editar o eliminar la información de los propietarios del condominio.</p>
+
+    <!-- Botón para agregar nuevo propietario -->
+    <div class="acciones">
+      <a href="#" onclick="agregarPropietario()">Agregar Nuevo Propietario</a>
+    </div>
+
+    <!-- Tabla de Propietarios -->
+    <table class="tabla">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Unidad</th>
+          <th>Email</th>
+          <th>Teléfono</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Propietario 1 -->
+        <tr>
+          <td>Juan Pérez</td>
+          <td>Casa 123</td>
+          <td>juan@example.com</td>
+          <td>+1 809 123 4567</td>
+          <td>
+            <button onclick="editarPropietario(this)">Editar</button>
+            <button onclick="eliminarPropietario(this)">Eliminar</button>
+          </td>
+        </tr>
+
+        <!-- Propietario 2 -->
+        <tr>
+          <td>Maria López</td>
+          <td>Apto 4B</td>
+          <td>maria@example.com</td>
+          <td>+1 809 987 6543</td>
+          <td>
+            <button onclick="editarPropietario(this)">Editar</button>
+            <button onclick="eliminarPropietario(this)">Eliminar</button>
+          </td>
+        </tr>
+
+        <!-- Propietario 3 -->
+        <tr>
+          <td>Carlos Rojas</td>
+          <td>Piso 5 - A</td>
+          <td>carlos@example.com</td>
+          <td>+1 809 555 1234</td>
+          <td>
+            <button onclick="editarPropietario(this)">Editar</button>
+            <button onclick="eliminarPropietario(this)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+
+  <!-- Script opcional para funcionalidad básica -->
+  <script>
+    // Simular agregar un nuevo propietario
+    function agregarPropietario() {
+      alert("Aquí se abriría un formulario para agregar un nuevo propietario.");
+    }
+
+    // Simular edición de propietario
+    function editarPropietario(btn) {
+      const fila = btn.closest("tr");
+      const nombre = fila.children[0].textContent;
+      alert("Editando datos de: " + nombre);
+    }
+
+    // Eliminar propietario de la tabla
+    function eliminarPropietario(btn) {
+      if (confirm("¿Estás seguro de que deseas eliminar a este propietario?")) {
+        const fila = btn.closest("tr");
+        fila.remove();
+        alert("Propietario eliminado correctamente.");
+      }
+    }
+  </script>
+
+</body>
+</html>

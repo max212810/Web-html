@@ -1,0 +1,419 @@
+/* ================== RESET Y BASE ================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+html, body {
+  height: 100%;
+  background-color: #f0f2f5;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ================== ENCABEZADO GENERAL ================== */
+.site-header {
+  background: linear-gradient(135deg, #6c63ff, #7a5cff);
+  color: white;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 2;
+}
+
+.site-header h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.menu li {
+  list-style: none;
+}
+
+.menu a {
+  color: white;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: background 0.3s;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.menu a:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* ================== CONTENEDOR PRINCIPAL ================== */
+.container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* ================== DASHBOARD ================== */
+.resumen {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  flex: 1 1 220px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card strong {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #6c63ff;
+}
+
+.acciones {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.acciones a {
+  display: block;
+  background: #6c63ff;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.acciones a:hover {
+  background: #5a50d6;
+}
+
+/* ================== FORMULARIOS ================== */
+.formulario {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.formulario label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #333;
+}
+
+.formulario input,
+.formulario select,
+.formulario textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+.formulario input:focus,
+.formulario select:focus,
+.formulario textarea:focus {
+  border-color: #6c63ff;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(108, 99, 255, 0.3);
+}
+
+.formulario button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(to right, #6c63ff, #7a5cff);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.formulario button:hover {
+  background: linear-gradient(to right, #5a50d6, #674de3);
+}
+
+/* ================== LOGIN ================== */
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://images.unsplash.com/photo-1584132960-28510181ded0 ');
+  background-size: cover;
+  background-position: center;
+  filter: blur(2px);
+  z-index: -1;
+}
+
+.login-container {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.login-container h1 {
+  font-size: 20px;
+  color: #5a4fcf;
+  margin-bottom: 20px;
+}
+
+.login-container input {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: border-color 0.3s ease;
+}
+
+.login-container input:focus {
+  border-color: #6c63ff;
+  outline: none;
+}
+
+.login-container button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(to right, #6c63ff, #7a5cff);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.login-container button:hover {
+  background: linear-gradient(to right, #5a50d6, #674de3);
+}
+
+.login-container p {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+/* ================== TABLAS ================== */
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tabla thead {
+  background: #6c63ff;
+  color: white;
+}
+
+.tabla th,
+.tabla td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.tabla tr:hover {
+  background: #f9f9f9;
+}
+
+/* ================== ESTADOS ================== */
+.estado {
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 4px;
+  color: white;
+  display: inline-block;
+  font-size: 12px;
+}
+
+.estado-pendiente { background-color: #ff9800; }
+.estado-en-progreso { background-color: #2196f3; }
+.estado-completado { background-color: #4caf50; }
+.estado-aprobado { background-color: #4caf50; }
+.estado-rechazado { background-color: #f44336; }
+
+/* ================== CALENDARIO ================== */
+.calendario {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.tabla-calendario {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.tabla-calendario th,
+.tabla-calendario td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.tabla-calendario td.evento {
+  background-color: #e3f2fd;
+  font-weight: bold;
+  position: relative;
+}
+
+.tabla-calendario td.evento span {
+  display: block;
+  font-size: 12px;
+  color: #1976d2;
+  margin-top: 4px;
+}
+
+/* ================== TARJETAS ================== */
+.tarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.card.tarea {
+  border-left: 6px solid #6c63ff;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.card p {
+  font-size: 14px;
+  margin: 6px 0;
+  color: #555;
+}
+
+.card button {
+  margin-top: 10px;
+  width: 100%;
+}
+
+/* ================== BOTONES GENERALES ================== */
+button {
+  padding: 10px 20px;
+  background: #6c63ff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #5a50d6;
+}
+
+/* ================== ACCESO RESTRINGIDO ================== */
+.restringido {
+  padding: 40px;
+  background: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeeba;
+  border-radius: 8px;
+  margin: 40px auto;
+  max-width: 600px;
+  text-align: center;
+}
+
+/* ================== ANIMACIONES ================== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* ================== RESPONSIVE ================== */
+@media (max-width: 768px) {
+  .resumen {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .acciones {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .formulario {
+    padding: 20px;
+  }
+
+  .tarjetas {
+    grid-template-columns: 1fr;
+  }
+
+  .tabla-calendario {
+    font-size: 14px;
+  }
+}

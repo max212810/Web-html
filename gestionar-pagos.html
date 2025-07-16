@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gestionar Pagos</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Encabezado -->
+  <header class="site-header">
+    <h1>Condominio Island Winds</h1>
+    <nav>
+      <ul class="menu">
+        <li><a href="dashboard.html">Inicio</a></li>
+        <li><a href="#">Gestionar Pagos</a></li>
+        <li><a href="../index.html">Cerrar Sesión</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Contenido Principal -->
+  <main class="container">
+    <h2>Pagos Recibidos</h2>
+    <p>Aquí puedes revisar y validar los pagos realizados por los propietarios.</p>
+
+    <!-- Filtros -->
+    <div class="filtros">
+      <label for="filtroEstado">Filtrar por estado:</label>
+      <select id="filtroEstado" onchange="filtrarPagos()">
+        <option value="todos">Todos</option>
+        <option value="pendiente">Pendientes</option>
+        <option value="aprobado">Aprobados</option>
+        <option value="rechazado">Rechazados</option>
+      </select>
+    </div>
+
+    <!-- Tabla de Pagos -->
+    <table class="tabla" id="tablaPagos">
+      <thead>
+        <tr>
+          <th>Propietario</th>
+          <th>Monto</th>
+          <th>Fecha</th>
+          <th>Estado</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Pago 1 -->
+        <tr data-estado="pendiente">
+          <td>Juan Pérez</td>
+          <td>$100.00</td>
+          <td>05/05/2025</td>
+          <td class="estado estado-pendiente">Pendiente</td>
+          <td>
+            <button onclick="aprobarPago(this)">Aprobar</button>
+            <button onclick="rechazarPago(this)">Rechazar</button>
+          </td>
+        </tr>
+
+        <!-- Pago 2 -->
+        <tr data-estado="aprobado">
+          <td>Maria López</td>
+          <td>$100.00</td>
+          <td>07/05/2025</td>
+          <td class="estado estado-aprobado">Aprobado</td>
+          <td>
+            <button disabled>Aprobado</button>
+            <button disabled>Verificado</button>
+          </td>
+        </tr>
+
+        <!-- Pago 3 -->
+        <tr data-estado="pendiente">
+          <td>Carlos Rojas</td>
+          <td>$100.00</td>
+          <td>10/05/2025</td>
+          <td class="estado estado-pendiente">Pendiente</td>
+          <td>
+            <button onclick="aprobarPago(this)">Aprobar</button>
+            <button onclick="rechazarPago(this)">Rechazar</button>
+          </td>
+        </tr>
+
+        <!-- Pago 4 -->
+        <tr data-estado="rechazado">
+          <td>Ana Torres</td>
+          <td>$100.00</td>
+          <td>12/05/2025</td>
+          <td class="estado estado-rechazado">Rechazado</td>
+          <td>
+            <button disabled>Rechazado</button>
+            <button onclick="aprobarPago(this)">Volver a aprobar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+
+  <!-- Script opcional para funcionalidad básica -->
+  <script>
+    // Función para aprobar un pago
+    function aprobarPago(btn) {
+      const fila = btn.closest("tr");
+      const celdas = fila.getElementsByTagName("td");
+
+      celdas[3].textContent = "Aprobado";
+      celdas[3].className = "estado estado-aprobado";
+
+      const acciones = celdas[4];
+      acciones.innerHTML = `
+        <button disabled>Aprobado</button>
+        <button disabled>Verificado</button>
+      `;
+    }
+
+    // Función para rechazar un pago
+    function rechazarPago(btn) {
+      const fila = btn.closest("tr");
+      const celdas = fila.getElementsByTagName("td");
+
+      celdas[3].textContent = "Rechazado";
+      celdas[3].className = "estado estado-rechazado";
+
+      const acciones = celdas[4];
+      acciones.innerHTML = `
+        <button disabled>Rechazado</button>
+        <button onclick="aprobarPago(this)">Volver a aprobar</button>
+      `;
+    }
+
+    // Función para filtrar por estado
+    function filtrarPagos() {
+      const filtro = document.getElementById("filtroEstado").value;
+      const filas = document.querySelectorAll("#tablaPagos tbody tr");
+
+      filas.forEach(fila => {
+        if (filtro === "todos" || fila.getAttribute("data-estado") === filtro) {
+          fila.style.display = "";
+        } else {
+          fila.style.display = "none";
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
